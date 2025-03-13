@@ -1,9 +1,9 @@
 :root {
     --fuenteHeading: 'PT Sans', sans-serif;
     --fuenteParrafos: 'Open Sans', sans-serif;
-
     --primario: #784D3C;
     --blanco: #ffffff;
+    --gris: #e1e1e1;
     --negro: #000000;
 }
 
@@ -26,8 +26,10 @@ body {
 /*Lo que se usa mas de 1 vez*/
 
 .contenedor {
-    max-width: 120rem;
-    width: 90%;
+    /* max-width: 120rem;
+    width: 90%; */
+    /*Forma reducida*/
+    width: min(90%, 120rem); /*Aplica valor minimo de ambos valores agregados*/
     margin: 0 auto; /*Centra horizontalmente*/
 }
 a {
@@ -88,6 +90,10 @@ img {
     }
 }
 
+.barra {
+    padding-top: 4rem;
+}
+
 @media (min-width: 768px) { 
     .barra {
         display: flex;
@@ -119,4 +125,86 @@ img {
     text-align: center;
     font-size: 1.8rem;
     color: var(--blanco);
+}
+
+
+/** Contenido Principal **/
+@media (min-width: 768px) { 
+    .contenido-principal {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        column-gap: 4rem;
+    }
+}
+
+.entrada {
+    border-bottom: 1px solid var(--gris);
+    margin-bottom: 2rem;
+}
+
+
+.entrada:last-of-type { /*last of type ejemplo*/
+    border: none;
+    margin: 0;
+}
+
+.boton {
+    display: block;
+    font-family: var(--fuenteHeading);
+    color: var(--blanco);
+    text-align: center;
+    padding: 1rem 3rem;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) { 
+    .boton {
+       /* display: inline;*/ /*El display:inline son inmunes al width y margin-bottom*/
+       /*El inline-block toma lo mejor de block e inline*/
+       display: inline-block;
+    }
+}
+
+.boton--primario {
+    background-color: var(--negro);
+}
+.boton--secundario {
+    background-color: var(--primario);
+}
+
+.cursos {
+    list-style: none;
+}
+
+/*Listas*/
+.widget-curso {
+    border-bottom: 1px solid var(--gris);
+    margin-bottom: 2rem;
+}
+.widget-curso:last-of-type { /*Por si se agrega otro curso y no aparezca la linea*/
+    border: none;
+    margin-bottom: 0;
+}
+.widget-curso__label {
+    font-family: var(--fuenteHeading);
+    font-weight: bold;
+}
+.widget-curso__info {
+    font-weight: 400;
+}
+
+.widget-curso__label,
+.widget-curso__info {
+    font-size: 2rem;
+}
+
+/** Footer **/
+
+.footer {
+    background-color: var(--negro);
+    padding-bottom: 3rem;
+    margin-top: 4rem;
 }
