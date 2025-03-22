@@ -64,23 +64,36 @@
 
         <form class="formulario">
             <div class="campo">
-                <label for="nombre">Nombre</label> <!--for ayuda a la accesibilidad-->
-                <input type="text" id="nombre" name="nombre" placeholder="Tu Nombre">
-            </div>             
-            <div class="campo">
-                <label for="email">E-mail</label> <!--for ayuda a la accesibilidad-->
-                <input type="email" id="email" name="nombre" placeholder="Tu E-mail">
+                <label class="campo__label" for="nombre">Nombre</label> <!--for ayuda a la accesibilidad-->
+                <input 
+                    class="campo__field"
+                    type="text" 
+                    id="nombre" 
+                    name="nombre" 
+                    placeholder="Tu Nombre"
+                >
             </div>
             <div class="campo">
-                <label for="mensaje">Mensaje</label> <!--for ayuda a la accesibilidad-->
-                <textarea id="mensaje"></textarea>
+                <label class="campo__label" for="email">E-mail</label> <!--for ayuda a la accesibilidad-->
+                <input 
+                    class="campo__field"
+                    type="email" 
+                    id="email" 
+                    name="nombre" 
+                    placeholder="Tu E-mail"
+                >
             </div>
-            
             <div class="campo">
-                <input type="submit" value="Enviar" class="boton boton--primario">
+                <label class="campo__label" for="mensaje">Mensaje</label> <!--for ayuda a la accesibilidad-->
+                <textarea class="campo__field campo__field--textarea" id="mensaje"></textarea>
+            </div>
+
+            <div class="campo">
+                <input 
+                type="submit" value="Enviar" class="boton boton--primario">
             </div>
         </form>
-        
+
     </main>
     <footer class="footer">
         <div class="contenedor">

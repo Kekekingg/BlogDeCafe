@@ -5,8 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BlogDeCafé</title>
-    <meta name="description"
-        content="Descubre historias, consejos y aromas que despiertan los sentidos. Todo sobre el café, desde la planta hasta tu taza.">
+    <meta name="description" content="Descubre historias, consejos y aromas que despiertan los sentidos. Todo sobre el café, desde la planta hasta tu taza.">
     <meta name="author" content="KekeEngi">
 
     <!-- Open Graph Protocol -->
@@ -26,13 +25,26 @@
 
     <!-- Include your CSS files here -->
 
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/normalize.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Preload --><!--Carga elementos necesarios inmediatamente-->
+
+    <link rel="preload" href="css/normalize.css" as="style">
+    <link rel="stylesheet" href="css/normalize.css">
+
+    <link rel="preload" href="css/style.css" as="style">
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400&family=PT+Sans:ital,wght@0,400;0,700;1&display=swap" as="font" crossorigin="crossorigin">
     <link
         href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400&family=PT+Sans:ital,wght@0,400;0,700;1&display=swap"
         rel="stylesheet">
+
+    <link rel="preload" href="img/blog1.jpg" as="image">
+
+    <!-- Prefetch --> <!--Carga la siguiente pagina a la que los usuarios visitan mas-->
+     <link rel="prefetch" href="nosotros.html" as="document">
 
 </head>
 
@@ -63,7 +75,10 @@
 
             <article class="entrada">
                 <div class="entrada__imagen">
-                    <img src="img/blog1.jpg" alt="imagen blog">
+                    <picture><!--SOPORTA DIFERENTES FORMATOS y el mas adecuado para el navegador-->
+                        <source loading="lazy" srcset="img/blog1.webp" type="image/webp">
+                        <img loading="lazy" src="img/blog1.jpg" alt="imagen blog"> <!--Si no lo soporta el navegador, cae en el img que es soportado por todos los navegadores-->
+                    </picture>
                 </div>
 
                 <div class="entrada__contenido">
@@ -78,7 +93,10 @@
             
             <article class="entrada">
                 <div class="entrada__imagen">
-                    <img src="img/blog2.jpg" alt="imagen blog">
+                    <picture><!--SOPORTA DIFERENTES FORMATOS y el mas adecuado para el navegador-->
+                        <source loading="lazy" srcset="img/blog2.webp" type="image/webp">
+                        <img loading="lazy" src="img/blog2.jpg" alt="imagen blog"> <!--Si no lo soporta el navegador, cae en el img que es soportado por todos los navegadores-->
+                    </picture>
                 </div>
 
                 <div class="entrada__contenido">
@@ -93,7 +111,10 @@
             
             <article class="entrada">
                 <div class="entrada__imagen">
-                    <img src="img/blog3.jpg" alt="imagen blog">
+                    <picture><!--SOPORTA DIFERENTES FORMATOS y el mas adecuado para el navegador-->
+                        <source loading="lazy" srcset="img/blog3.webp" type="image/webp">
+                        <img loading="lazy" src="img/blog3.jpg" alt="imagen blog"> <!--Si no lo soporta el navegador, cae en el img que es soportado por todos los navegadores-->
+                    </picture>
                 </div>
 
                 <div class="entrada__contenido">
@@ -111,14 +132,14 @@
 
             <ul class="cursos no-padding">
                 <li class="widget-curso">
-                    <h4 class="no-margin">Tecnicas de Café</h4>
+                    <h4 class="no-margin">Tecnicas de Extracción de Café</h4>
                     <p class="widget-curso__label">Precio:
                         <span class="widget-curso__info">Gratis</span>
                     </p>
                     <p class="widget-curso__label">Cupo:
                         <span class="widget-curso__info">20</span>
                     </p>
-                    <a href="entrada.html" class="boton boton--secundario">Más información</a>
+                    <a href="entrada.html" class="boton boton--secundario">Más información sobre nuestros cursos</a>
                 </li>
                 
                 <li class="widget-curso">
@@ -129,7 +150,7 @@
                     <p class="widget-curso__label">Cupo:
                         <span class="widget-curso__info">20</span>
                     </p>
-                    <a href="entrada.html" class="boton boton--secundario">Más información</a>
+                    <a href="entrada.html" class="boton boton--secundario">Más información sobre nuestros cursos</a>
                 </li>
             </ul>
         </aside>
@@ -150,6 +171,6 @@
         </div>
     </footer>
 
+    <script src="Js/modernizr.js"></script>
 </body>
-
 </html>

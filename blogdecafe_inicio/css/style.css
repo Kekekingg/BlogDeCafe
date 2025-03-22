@@ -67,9 +67,13 @@ img {
 }
 
 /** Header **/
-
-.header {
+.webp .header {
+    background-image: url(../img/banner.webp);
+}
+.no-webp .header {
     background-image: url(../img/banner.jpg);
+}
+.header {
     height: 60rem;
     background-size: cover; /* Si se usa cover siempre es center center*/
     background-repeat: no-repeat;
@@ -158,6 +162,7 @@ img {
     text-transform: uppercase;
     font-weight: 700;
     margin-bottom: 2rem;
+    border: none;
 }
 
 @media (min-width: 768px) { 
@@ -166,6 +171,10 @@ img {
        /*El inline-block toma lo mejor de block e inline*/
        display: inline-block;
     }
+}
+
+.boton:hover {
+    cursor: pointer;
 }
 
 .boton--primario {
@@ -274,4 +283,32 @@ img {
     height: 40rem;
     background-size: cover;
     background-repeat: no-repeat;
+}
+
+/** FORMULARIO **/
+
+.formulario {
+    background-color: var(--blanco);
+    margin: -5rem auto 0 auto; /*Si es negativo es hacia arriba*/
+    width: 95%;
+    padding: 5rem;
+}
+
+.campo {/*PADRE*/
+    display: flex;/*Aunque ya esten alineados, es para usar el flex de abajo*/
+    margin-bottom: 2rem;
+}
+
+.campo__label {/*HIJO*/
+    flex:  0 0 9rem;/*Ayuda a que no crezca pero deja fijo el tamaño en 9rem*/ /*lA BASE SON LOS 9REM*/
+    text-align: right;
+    padding-right: 2rem;
+}
+
+.campo__field {/*HIJO*/
+    flex: 1;/*Todo lo que quede disponible lo toma*/
+    border: 1px solid var(--gris);
+}
+.campo__field--textarea {/*HIJO*/
+    height: 20rem;
 }
